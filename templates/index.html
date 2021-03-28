@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Council Query System</title>
+</head>
+<body>
+    <br><br>
+    <div align="center">
+    <h1> Query Dashboard </h1>
+    <br><br>
+    <table border = "0" cellpadding = "10" cellspacing = "10">
+        <tr>
+        <td>
+            <a href = "\addQuery">
+            <button style="height:75px;width:150px; background-color: #B3B6B7 ; border-color: #B3B6B7; color: #34495E" >
+            Register Query</button></a>
+        </td>
+        </tr>
+    </table><br>
+    <table border = "1" cellpadding = "5" cellspacing = "5">
+     <thead>
+        <td>Username</td>
+        <td>Email</td>
+        <td>Query Type</td>
+        <td>Query State</td>
+        <td>Question</td>
+        <td>Answer</td>
+
+
+     </thead>
+     {% for row in rows %}
+        <tr>
+           {% for data in row %}
+              <td>{{ data }}</td>
+           {% endfor %}
+            <td>
+                <a href = "{{url_for('update_query', username=row[0])}}">Update Query</a>
+            </td>
+            <td>
+                <a href = "{{url_for('remove_query', username=row[0])}}">Close and Remove Query</a>
+            </td>
+        </tr>
+     {% endfor %}
+    </table><br><br>
+
+        ------------------------------------------------------------------------ <br>
+
+
+        <table>
+        <tr>
+            <td> Advisor details: </td>
+            <td>{{ names }}</td>
+        </tr>
+    </table>
+
+    </div>
+</body>
+</html>

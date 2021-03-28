@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Council Query System</title>
+</head>
+   <body>
+   <div align="center">
+   <br>
+      <a href = "\dashboard">
+      <button style="height:75px;width:500px; background-color: #B3B6B7 ; border-color: #B3B6B7; color: #34495E" >
+          Dashboard</button></a>
+        <br><br>
+        <h1>Remove Client Query</h1>
+      <form action = "{{ url_for('delete') }}" method = "POST">
+         <br><br><br>
+         <h4>Username : {{data[0][0]}}</h4>
+          <input type="hidden" name="username" value="{{data[0][0]}}">
+          <h4>Query Type : {{data[0][1]}}</h4>
+          <h4>New Query State : {{data[0][2]}}</h4>
+          <h4>Question : {{data[0][3]}}</h4>
+          <h4>Answer : {{data[0][4]}}</h4>
+         <input type = "submit" value = "delete" />
+      </form>
+    </div>
+   </body>
+</html>

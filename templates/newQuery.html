@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Council Query System</title>
+</head>
+   <body>
+   <br>
+   <div align="center">
+      <a href = "\dashboard">
+      <button style="height:75px;width:500px; background-color: #B3B6B7 ; border-color: #B3B6B7; color: #34495E" >
+         Dashboard</button></a>
+      <form name="form1" action = "{{ url_for('register_query') }}" method = "POST">
+         <br><br>
+         <h1>New Query </h1>
+         <br><br><br>
+         Username
+         <input type = "text" name = "username" /><br><br>
+         Email
+         <input type = "text" name = "email" /><br><br>
+         Address (location)
+         <input type = "text" name = "address" /><br><br>
+         Social No. (id)
+         <input type = "text" name = "socialNo" /><br><br>
+         Query type (road work or taxes)
+         <input type = "text" name = "query_type" /><br><br>
+         Query question
+         <input type = "text" name = "question" /><br><br>
+         <input type = "submit" value = "register" />
+      </form>
+   </div>
+   </body>
+</html>
